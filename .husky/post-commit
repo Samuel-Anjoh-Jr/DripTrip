@@ -1,6 +1,16 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Run Tests
-echo "Running Tests..."
-#ng test
+echo "Running post-commit tasks..."
+
+# Send notification
+echo "Sending commit notification..."
+curl -X POST -H 'Content-type: application/json' \
+--data '{"text":"New commit made!"}' \
+https://hooks.slack.com/services/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
+
+# Generate documentation
+echo "Generating documentation..."
+npm run generate-docs
+
+echo "Post-commit tasks completed."
