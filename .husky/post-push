@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+undefined
+echo "Running post-push tasks..."
+
+# Send notification
+echo "Sending push notification..."
+curl -X POST -H 'Content-type: application/json' \
+--data '{"text":"New code pushed!"}' \
+https://hooks.slack.com/services/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
+
+# Deploy to production
+echo "Deploying to production..."

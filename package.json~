@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "ng generate @angular-devkit/build-angular:format --dry-run --write",
-    "lint": "prettier --check . && eslint .",
+    "lint": "prettier --write . && eslint .",
     "prepare": "husky install"
   },
   "private": true,

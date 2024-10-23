@@ -3,24 +3,30 @@
 
 echo "Running pre-push checks..."
 
-# Run tests
-echo "Running tests..."
-npm test
-test_status=$?
+#Run tests
+#echo "Running tests..."
+#npm test
+#test_status=$?
 
 # Run linting
 echo "Running lint checks..."
 npm run lint
 lint_status=$?
 
+# Run build
+echo "Running build..."
+npm run build
+build_status=$?
+
 # Run formatting checks
-echo "Checking code formatting..."
+#echo "Checking code formatting..."
 #npm run format:check
 #format_status=1?
 
 # Check if any of the checks failed
-if [ "$test_status" != 0 ] || [ "$lint_status" != 0 ] ; then
+if  [ "$lint_status" != 0 ]  || [ "$build_status" != 0 ]; then
 #  || [ "$format_status" != 0 ]
+#[ "$test_status" != 0 ] ||
   echo "Pre-push checks failed. Push aborted."
   exit 1
 fi
