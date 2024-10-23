@@ -11,6 +11,6 @@ https://hooks.slack.com/services/T07T6RZSPQU/B07T1GQQULD/cnogB9kEkGZa9sIwEH0eZsQ
 
 # Generate documentation
 echo "Generating documentation..."
-npm run generate-docs
+ng run generate-docs
 
 echo "Post-commit tasks completed."
