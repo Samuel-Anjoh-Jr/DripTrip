@@ -9,8 +9,7 @@
     "test": "ng test",
     "format": "ng generate @angular-devkit/build-angular:format --dry-run --write",
     "lint": "prettier --check . && eslint .",
-    "prepare": "husky install",
-    "pre-commit": ".husky/_/husky.sh"
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
