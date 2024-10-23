@@ -1,17 +1,19 @@
-import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'DripTrip';
+  public teston = 'test';
+  private title = 'DripTrip';
 
-  constructor() {
-    console.log('Testing Angular');
+ public tesing (): void {
+    console.log('error');
   }
+
 }
