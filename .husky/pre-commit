@@ -5,3 +5,4 @@ echo "Running pre-commit tasks..."
 # Run ESLint
 echo "Running ESLint..."
 ng lint
+npm run lint
