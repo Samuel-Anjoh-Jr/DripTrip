@@ -9,7 +9,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "ng generate @angular-devkit/build-angular:format --dry-run --write"
-
   },
   "private": true,
   "dependencies": {
@@ -47,5 +46,20 @@
     "tailwindcss": "^3.4.14",
     "typescript": "~5.5.2",
     "typescript-eslint": "8.10.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.html": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.css": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
