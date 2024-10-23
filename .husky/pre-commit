@@ -1,3 +1,10 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
-# Run with `npm run precommit:check`
+
+
+# Run ESLint
+echo "Running ESLint..."
+ng lint
+
+#echo "Checking code formatting..."
+#ng format prettier --check .
