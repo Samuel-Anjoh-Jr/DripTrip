@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint",
-    "format": "ng generate @angular-devkit/build-angular:format --dry-run --write"
+    "format": "ng generate @angular-devkit/build-angular:format --dry-run --write",
+    "lint": "prettier --check . && eslint ."
   },
   "private": true,
   "dependencies": {
