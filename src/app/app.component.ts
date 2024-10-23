@@ -12,8 +12,11 @@ export class AppComponent {
   public teston = 'test';
   private title = 'DripTrip';
 
- public tesing (): void {
+  public tesing (): void {
     console.log('error');
   }
 
+  testingAgaing () {
+    console.log('testing againg');
+  }
 }
