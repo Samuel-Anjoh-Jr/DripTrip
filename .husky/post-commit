@@ -16,7 +16,6 @@ curl -X POST -H 'Content-type: application/json' \
 "$WEBHOOK_URL"
 
 
-
 # Generate documentation (if uncommented)
 # echo "$(tput setaf 2)Generating documentation...$(tput sgr0)"
 # ng run generate-docs
