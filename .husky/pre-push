@@ -31,4 +31,10 @@ if  [ "$lint_status" != 0 ]  || [ "$build_status" != 0 ]; then
   exit 1
 fi
 
+# Send notification using the WEBHOOK_URL from the user's environment
+echo "$(tput setaf 2)Sending pre-push notification...$(tput sgr0)"
+curl -X POST -H 'Content-type: application/json' \
+--data "{\"text\":\"Push checks completed by $(logname) on branch $(git rev-parse --abbrev-ref HEAD)!\"}" \
+"$WEBHOOK_URL"
+
 echo "$(tput setaf 2)Pre-push checks passed. Proceeding with push.$(tput sgr0)"
