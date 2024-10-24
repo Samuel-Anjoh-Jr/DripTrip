@@ -3,20 +3,20 @@
 
 echo "Running post-commit tasks..."
 
-# Ensure the Webhook_URL environment variable is set
-if [ -z "$webhook_url" ]; then
-  echo "Error: Webhook_URL is not set. Please configure the environment variable."
+# Ensure the WEBHOOK_URL environment variable is set from the user's environment
+if [ -z "$WEBHOOK_URL" ]; then
+  echo "Error: WEBHOOK_URL is not set. Please configure the environment variable in your system settings."
   exit 1
 fi
 
-# Send notification
+# Send notification using the WEBHOOK_URL from the user's environment
 echo "Sending commit notification..."
 curl -X POST -H 'Content-type: application/json' \
 --data "{\"text\":\"New commit made by $(logname)!\"}" \
-"$webhook_url"
+"$WEBHOOK_URL"
 
+echo "Value is $WEBHOOK_URL"
 
-echo "Values $webhook_url"
 # Generate documentation (if uncommented)
 # echo "Generating documentation..."
 # ng run generate-docs
