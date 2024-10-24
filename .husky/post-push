@@ -18,6 +18,4 @@ curl -X POST -H 'Content-type: application/json' \
 --data "{\"text\":\"New push made by $(logname) on branch $BRANCH!\"}" \
 "$WEBHOOK_URL"
 
-echo "Value is $WEBHOOK_URL"
-
 echo "Post-push tasks completed."
