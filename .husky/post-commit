@@ -7,7 +7,7 @@ echo "Running post-commit tasks..."
 echo "Sending commit notification..."
 curl -X POST -H 'Content-type: application/json' \
 --data "{\"text\":\"New commit made by $(logname)!\"}" \
-https://hooks.slack.com/services/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
+${WEBHOOK_URL}
 
 # Generate documentation
 echo "Generating documentation..."
