@@ -12,9 +12,7 @@ fi
 echo "Sending commit notification..."
 curl -X POST -H 'Content-type: application/json' \
 --data "{\"text\":\"New commit made by $(logname)!\"}" \
-"$WEBHOOK_URL"
-
-echo "Value is $WEBHOOK_URL"
+"${WEBHOOK_URL}"
 
 # Generate documentation (if uncommented)
 # echo "Generating documentation..."
