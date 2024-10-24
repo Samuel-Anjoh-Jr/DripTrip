@@ -13,7 +13,7 @@ fi
 echo "Sending commit notification..."
 curl -X POST -H 'Content-type: application/json' \
 --data "{\"text\":\"New commit made by $(logname)!\"}" \
-https://hooks.slack.com/services/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
+"${%Webhook_URL%}"
 
 # Generate documentation (if uncommented)
 # echo "Generating documentation..."
