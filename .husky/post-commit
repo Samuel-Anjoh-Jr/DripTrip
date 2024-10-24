@@ -7,8 +7,7 @@ echo "Running post-commit tasks..."
 echo "Sending commit notification..."
 curl -X POST -H 'Content-type: application/json' \
 --data '{"text":"New commit made!"}' \
-https://hooks.slack.com/services/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
-
+"${WEBHOOK_URL}"
 # Generate documentation
 echo "Generating documentation..."
 #ng run generate-docs
