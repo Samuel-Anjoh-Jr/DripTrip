@@ -13,8 +13,8 @@ fi
 echo "Sending commit notification..."
 curl -X POST -H 'Content-type: application/json' \
 --data "{\"text\":\"New commit made by $(logname)!\"}" \
-"${%Webhook_URL%}"
-
+  echo "Using Webhook_URL = $Webhook_URL"
+WEBHOOK_URL=${WEBHOOK_URL:-$GITHUB_WEBHOOK_URL}
 # Generate documentation (if uncommented)
 # echo "Generating documentation..."
 # ng run generate-docs
