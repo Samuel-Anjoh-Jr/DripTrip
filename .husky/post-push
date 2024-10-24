@@ -8,6 +8,7 @@ echo "Sending push notification..."
 curl -X POST -H 'Content-type: application/json' \
 --data '{"text":"New code pushed!"}' \
 "${WEBHOOK_URL}"
+https://hooks.slack.com/services/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
 
 # Deploy to production
 echo "Deploying to production..."
