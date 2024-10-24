@@ -57,7 +57,6 @@ module.exports = tseslint.config(
       'prefer-const': 'error',
       'prefer-template': 'error',
       semi: 'error',
-      'space-before-function-paren': 'error',
       'max-len': ['error', 120],
       curly: ['error', 'all'],
       eqeqeq: 'error',
@@ -83,6 +82,9 @@ module.exports = tseslint.config(
         'error',
         {
           accessibility: 'explicit',
+          overrides: {
+            constructors: 'no-public',
+          },
         },
       ],
     },

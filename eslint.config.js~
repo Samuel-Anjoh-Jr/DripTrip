@@ -39,7 +39,10 @@ module.exports = tseslint.config(
           allowHigherOrderFunctions: false,
         },
       ],
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
       '@angular-eslint/use-lifecycle-interface': 'error',
       '@angular-eslint/no-output-on-prefix': 'error',
       '@angular-eslint/use-component-view-encapsulation': 'error',
@@ -53,11 +56,10 @@ module.exports = tseslint.config(
       'no-var': 'error',
       'prefer-const': 'error',
       'prefer-template': 'error',
-      'semi': 'error',
-      'space-before-function-paren': 'error',
-      'max-len': ['error', 5],
-      'curly': ['error', 'all'],
-      'eqeqeq': 'error',
+      semi: 'error',
+      'max-len': ['error', 120],
+      curly: ['error', 'all'],
+      eqeqeq: 'error',
       'no-eval': 'error',
       'no-extend-native': 'error',
       'no-fallthrough': 'error',
@@ -80,10 +82,15 @@ module.exports = tseslint.config(
         'error',
         {
           accessibility: 'explicit',
+          overrides: {
+            constructors: 'no-public',
+          },
+          overrides: {
+            onInit: 'no-public',
+          },
         },
       ],
     },
-
   },
   {
     files: ['**/*.html'],
