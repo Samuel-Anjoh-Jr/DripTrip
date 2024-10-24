@@ -7,8 +7,7 @@ echo "Running post-commit tasks..."
 echo "Sending commit notification..."
 curl -X POST -H 'Content-type: application/json' \
 --data "{\"text\":\"New commit made by $(logname)!\"}" \
-${WEBHOOK_URL}
-
+"${Webhook_URL}"
 # Generate documentation
 echo "Generating documentation..."
 #ng run generate-docs
