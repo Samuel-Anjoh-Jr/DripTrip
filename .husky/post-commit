@@ -9,7 +9,6 @@ if [ -z "$WEBHOOK_URL" ]; then
   exit 1
 fi
 
-# Send notification using the WEBHOOK_URL from the user's environment
 echo "Sending commit notification..."
 curl -X POST -H 'Content-type: application/json' \
 --data "{\"text\":\"New commit made by $(logname)!\"}" \
