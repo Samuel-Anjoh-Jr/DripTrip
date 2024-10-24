@@ -12,7 +12,7 @@ fi
 # Send notification using the WEBHOOK_URL from the user's environment
 echo "$(tput setaf 2)Sending commit notification...$(tput sgr0)"
 curl -X POST -H 'Content-type: application/json' \
---data "{\"text\":\"New commit made by $(logname) on branch $(git rev-parse --abbrev-ref HEAD)!\"}" \
+--data "{\"text\":\"New commit made by $(logname) on branch $(git rev-parse --abbrev-ref HEAD) with message: $(git log -1 --format=%B)\"}" \
 "$WEBHOOK_URL"
 
 
