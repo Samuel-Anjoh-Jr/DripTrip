@@ -1,25 +1,25 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "Running pre-push checks..."
+echo "$(tput setaf 2)Running pre-push checks...$(tput sgr0)"
 
 #Run tests
-#echo "Running tests..."
+#echo "$(tput setaf 2)Running tests...$(tput sgr0)"
 #npm test
 #test_status=$?
 
 # Run linting
-echo "Running lint checks..."
+echo "$(tput setaf 2)Running lint checks...$(tput sgr0)"
 npm run lint
 lint_status=$?
 
 # Run build
-echo "Running build..."
+echo "$(tput setaf 2)Running build...$(tput sgr0)"
 npm run build
 build_status=$?
 
 # Run formatting checks
-#echo "Checking code formatting..."
+#echo "$(tput setaf 2)Checking code formatting...$(tput sgr0)"
 #npm run format:check
 #format_status=1?
 
@@ -27,8 +27,8 @@ build_status=$?
 if  [ "$lint_status" != 0 ]  || [ "$build_status" != 0 ]; then
 #  || [ "$format_status" != 0 ]
 #[ "$test_status" != 0 ] ||
-  echo "Pre-push checks failed. Push aborted."
+  echo "$(tput setaf 1)Pre-push checks failed. Push aborted.$(tput sgr0)"
   exit 1
 fi
 
-echo "Pre-push checks passed. Proceeding with push."
+echo "$(tput setaf 2)Pre-push checks passed. Proceeding with push.$(tput sgr0)"
