@@ -3,11 +3,21 @@
 
 echo "Running post-push tasks..."
 
-# Send notification
+# Ensure the WEBHOOK_URL environment variable is set from the user's environment
+if [ -z "$WEBHOOK_URL" ]; then
+  echo "Error: WEBHOOK_URL is not set. Please configure the environment variable in your system settings."
+  exit 1
+fi
+
+# Get the branch name
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# Send notification using the WEBHOOK_URL from the user's environment
 echo "Sending push notification..."
 curl -X POST -H 'Content-type: application/json' \
---data '{"text":"New code pushed!"}' \
-https://hooks.slack.com/services/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
+--data "{\"text\":\"New push made by $(logname) on branch $BRANCH!\"}" \
+"$WEBHOOK_URL"
 
-# Deploy to production
-echo "Deploying to production..."
+echo "Value is $WEBHOOK_URL"
+
+echo "Post-push tasks completed."
