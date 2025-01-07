@@ -9,24 +9,23 @@ module.exports = {
         background: {
           DEFAULT: '#004d40',
           dark: '#00332e',
-          light: '#edf7ee',
           gray: '#1A202C',
+          light: '#edf7ee',
           white: '#ffffff',
-        },
-        text: {
-          DEFAULT: '#ffebee',
-          muted: '#ffccbc',
-          bright: '#fff3e0',
-          label: '#ff9800',
-          black: '#1a1a1a',
-          header: '#00332e',
         },
         primary: {
           DEFAULT: '#4caf50',
-          hover: '#43a047',
           active: '#388e3c',
-          light: '#c9e7cb',
           focus: '#edf7ee',
+          hover: '#43a047',
+          light: '#c9e7cb',
+          label: '#4caf50',
+          muted: '#c9e7cb',
+        },
+        text: {
+          DEFAULT: '#ffebee',
+          black: '#1a1a1a',
+          bright: '#fff3e0',
         },
         secondary: {
           DEFAULT: '#ff9800',
@@ -34,6 +33,8 @@ module.exports = {
           active: '#f57c00',
           light: '#fff3e0',
           focus: '#ffccbc',
+          label: '#ff9800',
+          muted: '#ffccbc',
         },
         toast: {
           success: {
