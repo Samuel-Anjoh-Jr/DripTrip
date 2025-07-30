@@ -22,7 +22,7 @@
     "@angular/platform-browser": "^19.0.5",
     "@angular/platform-browser-dynamic": "^19.0.5",
     "@angular/router": "^19.0.5",
-    "@eslint/plugin-kit": "^0.2.4",
+    "@eslint/plugin-kit": "^0.3.4",
     "http-proxy-middleware": "^3.0.3",
     "nanoid": "^3.3.8",
     "rxjs": "~7.8.0",
